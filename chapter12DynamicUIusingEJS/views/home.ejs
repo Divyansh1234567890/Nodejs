@@ -1,0 +1,15 @@
+<%- include('partials/head')%>
+  <body>
+    <header>
+      <h1 class="text-red-700 text-5xl" >here is the list of your registered homes</h1>
+      <ul>
+        <% registeredHomes.forEach(function(home){ %>
+          <li><%= home.houseName %></li>  
+       <% }) %>
+      </ul>
+    </header>
+    <main>
+      <a href="/host/add-home">Add Home</a>
+    </main>
+  </body>
+</html>
