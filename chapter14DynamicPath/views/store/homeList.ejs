@@ -1,0 +1,24 @@
+<%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+    <main class="container mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 max-w-xl">
+      <h2 class="text-3xl text-red-500 font-bold text-center mb-6">
+        Here are our registered homes:
+      </h2>
+      <ul class="space-y-4">
+        <% registeredHomes.forEach(home => { %>
+          <li class="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <img src="<%= home.photoUrl %>" alt="house img" class="w-64 h-40 object-cover rounded-lg mt-2">
+            <span class="text-lg text-gray-800">housename:<%= home.houseName %></span>
+            <span class="text-lg text-gray-800">price per night:<%= home.pricePerNight %></span>
+            <span class="text-lg text-gray-800">Location:<%= home.Location %></span>
+            <span class="text-lg text-gray-800">Rating:<%= home.Rating %></span>
+            <a href="/homeList/<%= home.id%>" class="bg-blue-500">details</a>
+            <%- include('../partials/favourite',{home:home}) %>
+          </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>
